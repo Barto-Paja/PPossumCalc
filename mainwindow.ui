@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>552</width>
+    <height>468</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>531</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Parametry fizjologiczne</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>511</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="0">
+        <widget class="QLabel" name="l_ECG">
+         <property name="text">
+          <string>EKG</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="l_systolicPressure">
+         <property name="text">
+          <string>Ciśnienie skurczowe</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="l_circulation">
+         <property name="text">
+          <string>Krążenie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="l_haemoglobin">
+         <property name="text">
+          <string>Hemoglobina</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Wiek</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="l_pulse">
+         <property name="text">
+          <string>Puls</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="l_urea">
+         <property name="text">
+          <string>Mocznik</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="l_leukocytosis">
+         <property name="text">
+          <string>Leukocytoza</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="l_Na">
+         <property name="text">
+          <string>Sód</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="l_K">
+         <property name="text">
+          <string>Potas</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="cb_age"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="cb_circulation"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="cb_ECG"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="cb_systolicPressure"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="cb_pulse"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="cb_haemoglobin"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QComboBox" name="cb_leukocytosis"/>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="cb_urea"/>
+       </item>
+       <item row="9" column="1">
+        <widget class="QComboBox" name="cb_Na"/>
+       </item>
+       <item row="10" column="1">
+        <widget class="QComboBox" name="cb_K"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Skala Glasgow</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>511</width>
+        <height>318</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="9" column="1">
+        <widget class="QRadioButton" name="rB_pointOutPain">
+         <property name="text">
+          <string>ruchy celowe, lokalizuje ból</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QRadioButton" name="rB_pathologyA">
+         <property name="text">
+          <string>patologiczna reakcja zgięciowa, odkorowanie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="4">
+        <widget class="QLabel" name="l_GlasgowEyes">
+         <property name="text">
+          <string>Otwieranie oczu</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="rB_spontaneously">
+         <property name="text">
+          <string>spontaniczne</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QRadioButton" name="rB_order">
+         <property name="text">
+          <string>na polecenie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QRadioButton" name="rB_incentives">
+         <property name="text">
+          <string>na boźdźce bólowe</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QRadioButton" name="rB_closedEyes">
+         <property name="text">
+          <string>nie otwiera</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" rowspan="4">
+        <widget class="QLabel" name="l_words">
+         <property name="text">
+          <string>Kontakt słowny</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QRadioButton" name="rB_confused">
+         <property name="text">
+          <string>odpowiedź splątana, pacjent zdezorientowany</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QRadioButton" name="rB_command">
+         <property name="text">
+          <string>spełnia polecenia</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QRadioButton" name="rb_noreaction">
+         <property name="text">
+          <string>bez reakcji</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QRadioButton" name="rB_scream">
+         <property name="text">
+          <string>odpowiedź nieadekwatna lub krzyk</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QRadioButton" name="rB_logic">
+         <property name="text">
+          <string>odpowiedź logiczna, pacjent zorientowany</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QRadioButton" name="rB_defencePain">
+         <property name="text">
+          <string>obrona na ból, wycofanie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QRadioButton" name="rB_pathologyB">
+         <property name="text">
+          <string>patologivzna reakcja wyprostna, odmóźdżenie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QRadioButton" name="rB_noreaction">
+         <property name="text">
+          <string>bez reakcji</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" rowspan="6">
+        <widget class="QLabel" name="l_moves">
+         <property name="text">
+          <string>Reakcja ruchowa</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Parametry zabiegu</string>
+     </attribute>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>521</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="0">
+        <widget class="QLabel" name="l_nop">
+         <property name="text">
+          <string>Liczba procedur</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="l_blood">
+         <property name="text">
+          <string>Śródoperacyjna utrata krwi</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="l_cont">
+         <property name="text">
+          <string>Zanieczyszczenie otrzewnej</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="l_malig">
+         <property name="text">
+          <string>Złośliwość zmiany</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="l_cepod">
+         <property name="text">
+          <string>Tryb zabiegu</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="l_tos">
+         <property name="text">
+          <string>Typ Zabiegu</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="cb_tos"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="cb_nop"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="cb_blood"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="cb_cont"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="cb_malig"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="cb_cepod"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>531</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>552</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
