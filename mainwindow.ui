@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -157,10 +157,10 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="9" column="1">
-        <widget class="QRadioButton" name="rB_pointOutPain">
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="rB_spontaneously">
          <property name="text">
-          <string>ruchy celowe, lokalizuje ból</string>
+          <string>spontaniczne</string>
          </property>
         </widget>
        </item>
@@ -171,27 +171,6 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0" rowspan="4">
-        <widget class="QLabel" name="l_GlasgowEyes">
-         <property name="text">
-          <string>Otwieranie oczu</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QRadioButton" name="rB_spontaneously">
-         <property name="text">
-          <string>spontaniczne</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QRadioButton" name="rB_order">
-         <property name="text">
-          <string>na polecenie</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
         <widget class="QRadioButton" name="rB_incentives">
          <property name="text">
@@ -199,10 +178,10 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QRadioButton" name="rB_closedEyes">
+       <item row="0" column="0" rowspan="4">
+        <widget class="QLabel" name="l_GlasgowEyes">
          <property name="text">
-          <string>nie otwiera</string>
+          <string>Otwieranie oczu</string>
          </property>
         </widget>
        </item>
@@ -213,10 +192,10 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QRadioButton" name="rB_confused">
+       <item row="3" column="1">
+        <widget class="QRadioButton" name="rB_closedEyes">
          <property name="text">
-          <string>odpowiedź splątana, pacjent zdezorientowany</string>
+          <string>nie otwiera</string>
          </property>
         </widget>
        </item>
@@ -227,8 +206,36 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="1">
+        <widget class="QRadioButton" name="rB_confused">
+         <property name="text">
+          <string>odpowiedź splątana, pacjent zdezorientowany</string>
+         </property>
+        </widget>
+       </item>
        <item row="7" column="1">
         <widget class="QRadioButton" name="rb_noreaction">
+         <property name="text">
+          <string>bez reakcji</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" rowspan="6">
+        <widget class="QLabel" name="l_moves">
+         <property name="text">
+          <string>Reakcja ruchowa</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QRadioButton" name="rB_defencePain">
+         <property name="text">
+          <string>obrona na ból, wycofanie</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QRadioButton" name="rB_noreaction">
          <property name="text">
           <string>bez reakcji</string>
          </property>
@@ -248,13 +255,6 @@
          </property>
         </widget>
        </item>
-       <item row="10" column="1">
-        <widget class="QRadioButton" name="rB_defencePain">
-         <property name="text">
-          <string>obrona na ból, wycofanie</string>
-         </property>
-        </widget>
-       </item>
        <item row="12" column="1">
         <widget class="QRadioButton" name="rB_pathologyB">
          <property name="text">
@@ -262,17 +262,17 @@
          </property>
         </widget>
        </item>
-       <item row="13" column="1">
-        <widget class="QRadioButton" name="rB_noreaction">
+       <item row="9" column="1">
+        <widget class="QRadioButton" name="rB_pointOutPain">
          <property name="text">
-          <string>bez reakcji</string>
+          <string>ruchy celowe, lokalizuje ból</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0" rowspan="6">
-        <widget class="QLabel" name="l_moves">
+       <item row="1" column="1">
+        <widget class="QRadioButton" name="rB_order">
          <property name="text">
-          <string>Reakcja ruchowa</string>
+          <string>na polecenie</string>
          </property>
         </widget>
        </item>
@@ -356,52 +356,6 @@
       </layout>
      </widget>
     </widget>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>370</y>
-      <width>531</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
