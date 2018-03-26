@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "QDebug"
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -129,7 +127,7 @@ int MainWindow::pscoreSum()
     int Na = ui->cb_Na->currentData().toInt();
     int K = ui->cb_K->currentData().toInt();
 
-    pscore = age+circulation+ecg+systolic+pulse+haemoglobin+leukocytosis+urea+Na+K;
+    return age+circulation+ecg+systolic+pulse+haemoglobin+leukocytosis+urea+Na+K;
 }
 
 int MainWindow::glasgowSum()
@@ -138,34 +136,18 @@ int MainWindow::glasgowSum()
 
     if(ui->rB_spontaneously->isChecked())
     {
-        ui->rB_order->setChecked(false);
-        ui->rB_incentives->setChecked(false);
-        ui->rB_closedEyes->setChecked(false);
-
         temp_v0 = 4;
     }
     else if(ui->rB_order->isChecked())
     {
-        ui->rB_spontaneously->setChecked(false);
-        ui->rB_incentives->setChecked(false);
-        ui->rB_closedEyes->setChecked(false);
-
         temp_v0 = 3;
     }
     else if(ui->rB_incentives->isChecked())
     {
-        ui->rB_spontaneously->setChecked(false);
-        ui->rB_order->setChecked(false);
-        ui->rB_closedEyes->setChecked(false);
-
         temp_v0 = 2;
     }
     else if(ui->rB_closedEyes->isChecked())
     {
-        ui->rB_spontaneously->setChecked(false);
-        ui->rB_order->setChecked(false);
-        ui->rB_incentives->setChecked(false);
-
         temp_v0 = 1;
     }
     else
@@ -175,48 +157,177 @@ int MainWindow::glasgowSum()
 
     if(ui->rB_logic->isChecked())
     {
-        ui->rB_confused->setChecked(false);
-        ui->rB_scream->setChecked(false);
-        ui->rb_noreaction->setChecked(false);
-
         temp_v1 = 4;
     }
     else if(ui->rB_confused->isChecked())
     {
-        ui->rB_logic->setChecked(false);
-        ui->rb_noreaction->setChecked(false);
-        ui->rB_scream->setChecked(false);
-
         temp_v1 = 3;
     }
     else if(ui->rB_scream->isChecked())
     {
-        ui->rB_logic->setChecked(false);
-        ui->rb_noreaction->setChecked(false);
-        ui->rB_confused->setChecked(false);
-
         temp_v1 = 2;
     }
     else if(ui->rb_noreaction->isChecked())
     {
-        ui->rB_confused->setChecked(false);
-        ui->rB_scream->setChecked(false);
-        ui->rB_logic->setChecked(false);
-
         temp_v1 = 1;
     }
     else
     {
         qDebug() << "Nie wybrano ani jednej opcji";
     }
+
+    if(ui->rB_command->isChecked())
+    {
+        temp_v2 = 6;
+    }
+    else if(ui->rB_pointOutPain->isChecked())
+    {
+        temp_v2 = 5;
+    }
+    else if(ui->rB_defencePain->isChecked())
+    {
+        temp_v2 = 4;
+    }
+    else if(ui->rB_pathologyA->isChecked())
+    {
+        temp_v2 = 3;
+    }
+    else if(ui->rB_pathologyB->isChecked())
+    {
+        temp_v2 = 2;
+    }
+    else if(ui->rB_noreaction->isChecked())
+    {
+        temp_v2 = 1;
+    }
+    else
+    {
+         qDebug() << "Nie wybrano ani jednej opcji";
+    }
+
+    int temp_sum = temp_v0+temp_v1+temp_v2;
+
+    if(temp_sum==0)
+    {
+        return 0;
+    }
+    else if(temp_sum == 15)
+    {
+        return 1;
+    }
+    else if(12<=temp_sum && temp_sum<=14)
+    {
+        return 2;
+    }
+    else if(9<=temp_sum && temp_sum<=11)
+    {
+        return 4;
+    }
+    else
+    {
+        return 8;
+    }
+
 }
 
-void MainWindow::on_cb_age_currentIndexChanged()
+int MainWindow::oscoreSum()
 {
-    qDebug() << ui->cb_age->currentData();
+    int tos = ui->cb_tos->currentData().toInt();
+    int nop = ui->cb_nop->currentData().toInt();
+    int blood = ui->cb_blood->currentData().toInt();
+    int cont =  ui->cb_cont->currentData().toInt();
+    int malig = ui->cb_malig->currentData().toInt();
+    int cepod = ui->cb_cepod->currentData().toInt();
+
+    return tos+nop+blood+cont+malig+cepod;
 }
 
-void MainWindow::on_cb_circulation_currentIndexChanged()
+void MainWindow::on_pushButton_2_clicked()
 {
-    qDebug() << ui->cb_circulation->currentData();
+    pscore = pscoreSum() + glasgowSum();
+
+    oscore =  oscoreSum();
+
+    dscore = (1/(1+exp(-((oscore*0.155)+(0.1692*pscore)-9.065))))*100;
+
+    mscore = (1/(1+exp(-((oscore*0.19)+(0.16*pscore)-5.91))))*100;
+
+    if(glasgowSum()==0)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Nie wypełniłeś skali Glasgow!");
+        msgBox.exec();
+    }
+    else
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Rezultat\nŚmiertelność: "+QString::number(dscore,'f',2)+"%\n"+
+                       "Zachorowalność: "+QString::number(mscore,'f',2)+"%");
+        msgBox.exec();
+    }
+
+}
+
+void MainWindow::on_checkBox_stateChanged(/*int arg1*/)
+{
+    if(ui->checkBox->isChecked())
+    {
+        ui->pushButton_2->setEnabled(true);
+    }
+    else
+    {
+        ui->pushButton_2->setEnabled(false);
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->cb_age->setCurrentIndex(0);
+    ui->cb_blood->setCurrentIndex(0);
+    ui->cb_cepod->setCurrentIndex(0);
+    ui->cb_circulation->setCurrentIndex(0);
+    ui->cb_cont->setCurrentIndex(0);
+    ui->cb_ECG->setCurrentIndex(0);
+    ui->cb_haemoglobin->setCurrentIndex(0);
+    ui->cb_K->setCurrentIndex(0);
+    ui->cb_leukocytosis->setCurrentIndex(0);
+    ui->cb_malig->setCurrentIndex(0);
+    ui->cb_Na->setCurrentIndex(0);
+    ui->cb_nop->setCurrentIndex(0);
+    ui->cb_pulse->setCurrentIndex(0);
+    ui->cb_systolicPressure->setCurrentIndex(0);
+    ui->cb_tos->setCurrentIndex(0);
+    ui->cb_urea->setCurrentIndex(0);
+
+    // Clear RadioBoxes
+
+    ui->rb_noreaction->setCheckable(false);
+    ui->rB_closedEyes->setCheckable(false);
+    ui->rB_command->setCheckable(false);
+    ui->rB_confused->setCheckable(false);
+    ui->rB_defencePain->setCheckable(false);
+    ui->rB_incentives->setCheckable(false);
+    ui->rB_logic->setCheckable(false);
+    ui->rB_noreaction->setCheckable(false);
+    ui->rB_order->setCheckable(false);
+    ui->rB_pathologyA->setCheckable(false);
+    ui->rB_pathologyB->setCheckable(false);
+    ui->rB_pointOutPain->setCheckable(false);
+    ui->rB_scream->setCheckable(false);
+    ui->rB_spontaneously->setCheckable(false);
+
+    ui->rb_noreaction->setCheckable(true);
+    ui->rB_closedEyes->setCheckable(true);
+    ui->rB_command->setCheckable(true);
+    ui->rB_confused->setCheckable(true);
+    ui->rB_defencePain->setCheckable(true);
+    ui->rB_incentives->setCheckable(true);
+    ui->rB_logic->setCheckable(true);
+    ui->rB_noreaction->setCheckable(true);
+    ui->rB_order->setCheckable(true);
+    ui->rB_pathologyA->setCheckable(true);
+    ui->rB_pathologyB->setCheckable(true);
+    ui->rB_pointOutPain->setCheckable(true);
+    ui->rB_scream->setCheckable(true);
+    ui->rB_spontaneously->setCheckable(true);
 }

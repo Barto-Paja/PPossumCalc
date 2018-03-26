@@ -2,7 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <math.h>
+
+#include "cmath"
+#include "iomanip"
+
+#include "QDebug"
+#include "QMessageBox"
 
 namespace Ui {
 class MainWindow;
@@ -17,9 +22,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_cb_age_currentIndexChanged();
+    void on_pushButton_2_clicked();
 
-    void on_cb_circulation_currentIndexChanged();
+    void on_checkBox_stateChanged();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -35,6 +42,7 @@ private:
     void cbInfo();
     int pscoreSum();
     int glasgowSum();
+    int oscoreSum();
 };
 
 #endif // MAINWINDOW_H

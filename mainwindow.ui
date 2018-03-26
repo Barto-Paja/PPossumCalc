@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>468</height>
+    <width>571</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>P-Possum Kalkulator</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -20,11 +20,11 @@
       <x>10</x>
       <y>10</y>
       <width>531</width>
-      <height>361</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -142,6 +142,40 @@
        </item>
       </layout>
      </widget>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>501</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Pouczenie
+
+Proszę pamiętać, że te wyniki są zapowiedzią zachorowalności i śmiertelności, a wyniki mają tendencję do lekkiego przeceniania się w grupie niskiego ryzyka i skrajnych czasach. Wyniki dla jednostki lub chirurga są najlepiej wyrażone jako obserwowane: oczekiwana śmiertelność, a zatem wymagają gromadzenia danych w określonym przedziale czasowym.</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>501</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Przeczytałem/am Puczenie i zdaję sobie sprawę z nieprecyzyjności algorytmu</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -150,130 +184,166 @@
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
         <width>511</width>
-        <height>318</height>
+        <height>461</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QRadioButton" name="rB_spontaneously">
-         <property name="text">
-          <string>spontaniczne</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QRadioButton" name="rB_pathologyA">
-         <property name="text">
-          <string>patologiczna reakcja zgięciowa, odkorowanie</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
-        <widget class="QRadioButton" name="rB_incentives">
-         <property name="text">
-          <string>na boźdźce bólowe</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" rowspan="4">
-        <widget class="QLabel" name="l_GlasgowEyes">
-         <property name="text">
-          <string>Otwieranie oczu</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0" rowspan="4">
-        <widget class="QLabel" name="l_words">
-         <property name="text">
-          <string>Kontakt słowny</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QRadioButton" name="rB_closedEyes">
-         <property name="text">
-          <string>nie otwiera</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QRadioButton" name="rB_command">
-         <property name="text">
-          <string>spełnia polecenia</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QRadioButton" name="rB_confused">
-         <property name="text">
-          <string>odpowiedź splątana, pacjent zdezorientowany</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QRadioButton" name="rb_noreaction">
-         <property name="text">
-          <string>bez reakcji</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0" rowspan="6">
-        <widget class="QLabel" name="l_moves">
-         <property name="text">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
           <string>Reakcja ruchowa</string>
          </property>
+         <widget class="QWidget" name="verticalLayoutWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>291</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QRadioButton" name="rB_command">
+             <property name="text">
+              <string>spełnia polecenia</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_pointOutPain">
+             <property name="text">
+              <string>ruchy celowe, lokalizuje ból</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_defencePain">
+             <property name="text">
+              <string>obrona na ból, wycofanie</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_pathologyA">
+             <property name="text">
+              <string>patologiczna reakcja zgięciowa, odkorowanie</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_pathologyB">
+             <property name="text">
+              <string>patologivzna reakcja wyprostna, odmóźdżenie</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_noreaction">
+             <property name="text">
+              <string>bez reakcji</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
-       <item row="10" column="1">
-        <widget class="QRadioButton" name="rB_defencePain">
-         <property name="text">
-          <string>obrona na ból, wycofanie</string>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Otwieranie oczu</string>
          </property>
-        </widget>
-       </item>
-       <item row="13" column="1">
-        <widget class="QRadioButton" name="rB_noreaction">
-         <property name="text">
-          <string>bez reakcji</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QRadioButton" name="rB_scream">
-         <property name="text">
-          <string>odpowiedź nieadekwatna lub krzyk</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QRadioButton" name="rB_logic">
-         <property name="text">
-          <string>odpowiedź logiczna, pacjent zorientowany</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1">
-        <widget class="QRadioButton" name="rB_pathologyB">
-         <property name="text">
-          <string>patologivzna reakcja wyprostna, odmóźdżenie</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QRadioButton" name="rB_pointOutPain">
-         <property name="text">
-          <string>ruchy celowe, lokalizuje ból</string>
-         </property>
+         <widget class="QWidget" name="verticalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>251</width>
+            <height>91</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QRadioButton" name="rB_spontaneously">
+             <property name="text">
+              <string>spontaniczne</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_order">
+             <property name="text">
+              <string>na polecenie</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_closedEyes">
+             <property name="text">
+              <string>nie otwiera</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_incentives">
+             <property name="text">
+              <string>na boźdźce bólowe</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QRadioButton" name="rB_order">
-         <property name="text">
-          <string>na polecenie</string>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Kontakt słowny</string>
          </property>
+         <widget class="QWidget" name="verticalLayoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>281</width>
+            <height>111</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QRadioButton" name="rB_logic">
+             <property name="text">
+              <string>odpowiedź logiczna, pacjent zorientowany</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_confused">
+             <property name="text">
+              <string>odpowiedź splątana, pacjent zdezorientowany</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rB_scream">
+             <property name="text">
+              <string>odpowiedź nieadekwatna lub krzyk</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_noreaction">
+             <property name="text">
+              <string>bez reakcji</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -355,6 +425,35 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>380</y>
+        <width>341</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Od nowa</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Oblicz</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -363,7 +462,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>552</width>
+     <width>571</width>
      <height>21</height>
     </rect>
    </property>
