@@ -207,7 +207,7 @@ int MainWindow::glasgowSum()
 
     int temp_sum = temp_v0+temp_v1+temp_v2;
 
-    if(temp_sum==0)
+    if(temp_sum<=3)
     {
         return 0;
     }
